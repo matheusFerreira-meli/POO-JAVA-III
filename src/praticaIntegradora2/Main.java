@@ -3,6 +3,7 @@ package praticaIntegradora2;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -24,9 +25,6 @@ public class Main {
 
         // Exercicio 3
 
-        // garage.getVehicleList().sort(Vehicle::compareByPrice);
-        // System.out.println("Veiculos ordenados por preço: " + garage.getVehicleList());
-
         System.out.println("Lista ordenada por preço");
         garage.getVehicleList().stream()
                 .sorted(Vehicle::compareByPrice)
@@ -34,6 +32,7 @@ public class Main {
 
         System.out.println("=============================");
 
+        // Exercicio 4
         System.out.println("Lista ordenada por marca");
         garage.getVehicleList().stream()
                 .sorted(Vehicle::compareByBrand)
@@ -46,8 +45,27 @@ public class Main {
                 .sorted(Vehicle::compareByModel)
                 .forEach(System.out::println);
 
-        // Exercicio 4
-        // garage.getVehicleList().sort(Vehicle::compareByBrand);
-        // System.out.println("Veiculos ordenados por modelo: " + garage.getVehicleList());
+        // Exercicio 5
+        System.out.println("=============================");
+
+        System.out.println("Lista de carros com preço menor a 1000");
+        garage.getVehicleList().stream()
+                .filter(vehicle -> vehicle.getPrice() < 1000)
+                .forEach(System.out::println);
+
+        System.out.println("=============================");
+
+        System.out.println("Lista de carros com preço maior ou igual a 1000");
+        garage.getVehicleList().stream()
+                .filter(vehicle -> vehicle.getPrice() >= 1000)
+                .forEach(System.out::println);
+
+        OptionalDouble averagePrice = garage.getVehicleList().stream()
+                .mapToDouble(Vehicle::getPrice)
+                .average();
+
+        System.out.println("=============================");
+
+        System.out.println("Média de preços dos veículos: " + averagePrice);
     }
 }
