@@ -35,17 +35,21 @@ public class Vehicle {
         this.price = price;
     }
 
-    public static int compareByPrice(Vehicle crrVehicle, Vehicle otherVehicle) {
-        return Double.compare(crrVehicle.getPrice(), otherVehicle.getPrice());
+    public int compareByPrice(Vehicle otherVehicle) {
+        return Double.compare(this.getPrice(), otherVehicle.getPrice());
     }
 
-    public static int compareByBrand(Vehicle crrVehicle, Vehicle otherVehicle) {
-        return crrVehicle.getBrand().compareTo(otherVehicle.getBrand());
+    public int compareByModel(Vehicle otherVehicle) {
+        return this.getModel().compareTo(otherVehicle.getModel());
+    }
+
+    public int compareByBrand(Vehicle otherVehicle) {
+        return this.getBrand().compareTo(otherVehicle.getBrand());
     }
 
     @Override
     public String toString() {
-        return this.brand;
+        return "{ model: " + model + ", brand: " + brand + ", price: " + price + " }";
     }
 
 }

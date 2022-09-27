@@ -24,11 +24,30 @@ public class Main {
 
         // Exercicio 3
 
-        garage.getVehicleList().sort(Vehicle::compareByPrice);
-        System.out.println("Veiculos ordenados por preço: " + garage.getVehicleList());
+        // garage.getVehicleList().sort(Vehicle::compareByPrice);
+        // System.out.println("Veiculos ordenados por preço: " + garage.getVehicleList());
+
+        System.out.println("Lista ordenada por preço");
+        garage.getVehicleList().stream()
+                .sorted(Vehicle::compareByPrice)
+                .forEach(System.out::println);
+
+        System.out.println("=============================");
+
+        System.out.println("Lista ordenada por marca");
+        garage.getVehicleList().stream()
+                .sorted(Vehicle::compareByBrand)
+                .forEach(System.out::println);
+
+        System.out.println("=============================");
+
+        System.out.println("Lista ordenada por modelo");
+        garage.getVehicleList().stream()
+                .sorted(Vehicle::compareByModel)
+                .forEach(System.out::println);
 
         // Exercicio 4
-        garage.getVehicleList().sort(Vehicle::compareByBrand);
-        System.out.println("Veiculos ordenados por modelo: " + garage.getVehicleList());
+        // garage.getVehicleList().sort(Vehicle::compareByBrand);
+        // System.out.println("Veiculos ordenados por modelo: " + garage.getVehicleList());
     }
 }
