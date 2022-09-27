@@ -1,4 +1,4 @@
-package exercise3;
+package praticaIntegradora1.exercise3;
 
 public abstract class Animal {
     public abstract String emitSound();

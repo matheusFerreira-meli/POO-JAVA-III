@@ -1,6 +1,6 @@
-package exercise3;
+package praticaIntegradora1.exercise3;
 
-import exercise3.interfaces.ICarnivorousAnimal;
+import praticaIntegradora1.exercise3.interfaces.ICarnivorousAnimal;
 
 public class Cat extends Animal implements ICarnivorousAnimal {
     @Override

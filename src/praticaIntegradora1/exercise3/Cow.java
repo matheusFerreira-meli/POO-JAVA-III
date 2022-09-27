@@ -1,6 +1,6 @@
-package exercise3;
+package praticaIntegradora1.exercise3;
 
-import exercise3.interfaces.IHerbivorousAnimal;
+import praticaIntegradora1.exercise3.interfaces.IHerbivorousAnimal;
 
 public class Cow extends Animal implements IHerbivorousAnimal {
     @Override
