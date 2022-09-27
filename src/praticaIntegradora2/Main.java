@@ -1,10 +1,8 @@
 package praticaIntegradora2;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.OptionalDouble;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,46 +24,31 @@ public class Main {
         // Exercicio 3
 
         System.out.println("Lista ordenada por preço");
-        garage.getVehicleList().stream()
-                .sorted(Vehicle::compareByPrice)
-                .forEach(System.out::println);
+        garage.showVehiclesOrderedByPrice();
 
         System.out.println("=============================");
 
         // Exercicio 4
         System.out.println("Lista ordenada por marca");
-        garage.getVehicleList().stream()
-                .sorted(Vehicle::compareByBrand)
-                .forEach(System.out::println);
+        garage.showVehiclesOrderedByBrand();
 
         System.out.println("=============================");
 
         System.out.println("Lista ordenada por modelo");
-        garage.getVehicleList().stream()
-                .sorted(Vehicle::compareByModel)
-                .forEach(System.out::println);
+        garage.showVehiclesOrderedByModel();
 
         // Exercicio 5
         System.out.println("=============================");
 
-        System.out.println("Lista de carros com preço menor a 1000");
-        garage.getVehicleList().stream()
-                .filter(vehicle -> vehicle.getPrice() < 1000)
-                .forEach(System.out::println);
+        System.out.println("Lista de carros com preço menor a 1000 (ou qualquer preço)");
+        garage.showPriceLessThan(1000);
 
         System.out.println("=============================");
 
-        System.out.println("Lista de carros com preço maior ou igual a 1000");
-        garage.getVehicleList().stream()
-                .filter(vehicle -> vehicle.getPrice() >= 1000)
-                .forEach(System.out::println);
-
-        OptionalDouble averagePrice = garage.getVehicleList().stream()
-                .mapToDouble(Vehicle::getPrice)
-                .average();
+        System.out.println("Lista de carros com preço maior ou igual a 1000 (ou qualquer preço)");
+        garage.showPriceHigherThan(1000);
 
         System.out.println("=============================");
-
-        System.out.println("Média de preços dos veículos: " + averagePrice);
+        garage.showAverage();
     }
 }
