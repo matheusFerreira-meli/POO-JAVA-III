@@ -28,8 +28,4 @@ public class Garage {
     public void setId(int id) {
         this.id = id;
     }
-
-    public void sortByPrice() {
-       Collections.sort(this.vehicleList);
-    }
 }
