@@ -1,7 +1,9 @@
 package praticaIntegradora2;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +19,12 @@ public class Main {
         Vehicle vehicle10 = new Vehicle("Fortuner", "Toyota", 3000);
         Vehicle vehicle11 = new Vehicle("Logan", "Renault", 950);
 
-        List<Vehicle> vehicles =Arrays.asList(vehicle1, vehicle2, vehicle3, vehicle4, vehicle5, vehicle6, vehicle7, vehicle8, vehicle9, vehicle10, vehicle11)
+        List<Vehicle> vehicles =Arrays.asList(vehicle1, vehicle2, vehicle3, vehicle4, vehicle5, vehicle6, vehicle7, vehicle8, vehicle9, vehicle10, vehicle11);
         Garage garage = new Garage(vehicles);
+
+        // Exercicio 3
+
+        garage.sortByPrice();
+        System.out.println(garage.getVehicleList());
     }
 }

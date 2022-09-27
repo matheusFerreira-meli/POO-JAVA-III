@@ -1,5 +1,8 @@
 package praticaIntegradora2;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Garage {
@@ -24,5 +27,9 @@ public class Garage {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void sortByPrice() {
+       Collections.sort(this.vehicleList);
     }
 }

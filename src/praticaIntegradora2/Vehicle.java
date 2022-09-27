@@ -1,6 +1,6 @@
 package praticaIntegradora2;
 
-public class Vehicle {
+public class Vehicle implements Comparable<Vehicle> {
     private String model;
     private String brand;
     private double price;
@@ -34,4 +34,15 @@ public class Vehicle {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public int compareTo(Vehicle otherVehicle) {
+        return (int) (this.getPrice() - otherVehicle.getPrice());
+    }
+
+    @Override
+    public String toString() {
+        return this.brand;
+    }
+
 }
