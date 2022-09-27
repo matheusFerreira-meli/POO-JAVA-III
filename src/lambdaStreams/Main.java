@@ -30,7 +30,7 @@ public class Main {
                 .stream()
                 .collect(Collectors.groupingBy(number -> {
                     if (number % 2 == 0) return "Par";
-                    else return "Impar";
+                    return "Impar";
                 }));
 
         System.out.println("groupingBy: " + group);
